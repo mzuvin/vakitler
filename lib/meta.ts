@@ -4,7 +4,7 @@ const description = "Namaz vakitlerini kolay şekilde öğrenin.";
 const url =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3000"
-    : "https://vakitler.app";
+    : process.env.ORIGIN;
 const locale = "tr-TR";
 
 export const metadata = {
