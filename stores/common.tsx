@@ -16,7 +16,7 @@ import { API_DATE_FORMAT, LOCAL_KEYS } from "@/lib/const";
 import setLanguage from "next-translate/setLanguage";
 import i18n from "@/i18n.json";
 import { useTheme } from "next-themes";
-
+import { metadata } from "@/lib/meta";
 const color = {
   [TimeNames.Imsak]: "sky",
   [TimeNames.Gunes]: "orange",
@@ -202,6 +202,17 @@ export function CommonStoreProvider({ children }: { children: ReactNode }) {
     updateTimer();
   }, [times]);
 
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        document.title =  document.title = document.getElementById("summaryTimer")?.textContent?.replace("vaktine","") as string;
+      } else {
+        document.title = metadata.title;
+      }
+    };
+    handleVisibilityChange();
+  });
+  
   useInterval(
     () => {
       let localTime = DateTime.local();
