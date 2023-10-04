@@ -39,5 +39,5 @@ export const metadata = {
     "384": "/android-chrome-384.png",
     "152": "/touch-icon-ipad-152.png",
   },
-  manifest: `${url}/manifest.json`,
+  manifest: `manifest.json`,
 };
