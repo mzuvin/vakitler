@@ -204,11 +204,11 @@ export function CommonStoreProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const handleVisibilityChange = () => {
-      if (document.hidden) {
+    //  if (document.hidden) {
         document.title =  document.title = document.getElementById("summaryTimer")?.textContent?.replace("vaktine","") as string;
-      } else {
-        document.title = metadata.title;
-      }
+    //  } else {
+    //    document.title = metadata.title;
+    //  }
     };
     handleVisibilityChange();
   });
